@@ -1,8 +1,12 @@
 package com.vocab.rohit.myvocab;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,10 +21,12 @@ import java.util.ArrayList;
 
 public class ShowWords extends AppCompatActivity {
 
-    String word, meaning;
+    String word, meaning, session;
     ListView listView ;
+    ArrayList<String> editWord ;
     ArrayList<WordMeaning> list = new ArrayList<WordMeaning>();
     DatabaseReference mref ;
+    Bundle bundle ;
 
 
     @Override
@@ -28,10 +34,10 @@ public class ShowWords extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_words);
 
-        Bundle bundle = getIntent().getExtras();
+        bundle = getIntent().getExtras();
         listView = findViewById(R.id.wordListView);
-        Log.d("Session", bundle.getString("Session"));
-        mref = FirebaseDatabase.getInstance().getReference().child(bundle.getString("Session"));
+        session = bundle.getString("Session");
+        mref = FirebaseDatabase.getInstance().getReference().child(session);
         mref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -48,6 +54,20 @@ public class ShowWords extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                editWord = new ArrayList<String>();
+                editWord.add(session);
+                editWord.add(list.get(position).word);
+                editWord.add(list.get(position).meaning);
+                Log.d("test",editWord.get(0)+" "+editWord.get(1)+" "+editWord.get(2));
+                Intent i = new Intent(ShowWords.this, EditMeaning.class);
+                i.putExtra("Extra", editWord);
+                startActivity(i);
             }
         });
 

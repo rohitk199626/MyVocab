@@ -24,6 +24,7 @@
         <activity android:name=".QuizStartPage" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".FinishedQuiz" />
+        <activity android:name=".EditMeaning"></activity>
     </application>
 
 </manifest>

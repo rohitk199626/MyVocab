@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "521207723179",
+    "firebase_url": "https://myvocab-93ab2.firebaseio.com",
+    "project_id": "myvocab-93ab2",
+    "storage_bucket": "myvocab-93ab2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521207723179:android:e828732a1805a70f",
+        "android_client_info": {
+          "package_name": "com.vocab.rohit.myvocab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521207723179-aftmtugknhvl4p1vvvus748bfldki85m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vocab.rohit.myvocab",
+            "certificate_hash": "957cabd47b15bc53446e6a57726b7b2839843058"
+          }
+        },
+        {
+          "client_id": "521207723179-ks1pp8upqntvihqh8ljog8jg11il83am.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIpQbANQAFyHJsiL_Lwesahxw9DzjVyx8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521207723179-ks1pp8upqntvihqh8ljog8jg11il83am.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

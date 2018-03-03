@@ -24,7 +24,8 @@
         <activity android:name=".QuizStartPage" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".FinishedQuiz" />
-        <activity android:name=".EditMeaning"></activity>
+        <activity android:name=".EditMeaning" />
+        <activity android:name=".AddWithoutSession"></activity>
     </application>
 
 </manifest>

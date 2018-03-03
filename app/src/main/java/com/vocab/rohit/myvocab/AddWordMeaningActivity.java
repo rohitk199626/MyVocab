@@ -15,7 +15,7 @@ public class AddWordMeaningActivity extends AppCompatActivity {
 
     Button addButton ;
     EditText editText ;
-    String sessionId, word, meaning ;
+    String sessionId, word, meaning, session ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,9 @@ public class AddWordMeaningActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 editText = findViewById(R.id.sessionId);
-                sessionId = "Session: " + editText.getText().toString();
+                session = editText.getText().toString();
+                session = session.substring(0,1).toUpperCase()+session.substring(1).toLowerCase();
+                sessionId = "Session: " + session;
                 editText = findViewById(R.id.word);
                 word = editText.getText().toString().toUpperCase();
                 editText.setText("");

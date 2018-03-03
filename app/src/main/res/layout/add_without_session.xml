@@ -4,63 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vocab.rohit.myvocab.EditMeaning">
+    tools:context="com.vocab.rohit.myvocab.AddWithoutSession">
 
     <EditText
-        android:id="@+id/editWord"
+        android:id="@+id/wordInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:ems="10"
+        android:hint="Word"
         android:inputType="textPersonName"
-        android:textColorLink="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editMeaning"
+        android:id="@+id/meaningInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:ems="10"
+        android:hint="Meaning"
         android:inputType="textPersonName"
-        android:textColorLink="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editWord" />
+        app:layout_constraintTop_toBottomOf="@+id/wordInput" />
 
     <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/colorPrimary"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="Delete"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMeaning" />
-
-    <Button
-        android:id="@+id/updateButton"
+        android:id="@+id/addButtonWithoutSession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:background="@color/colorPrimary"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="Update"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="@color/colorPrimary"
+        android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMeaning" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meaningInput" />
 </android.support.constraint.ConstraintLayout>

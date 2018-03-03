@@ -1,6 +1,7 @@
 package com.vocab.rohit.myvocab;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,7 @@ public class ShowWords extends AppCompatActivity {
     ArrayList<WordMeaning> list = new ArrayList<WordMeaning>();
     DatabaseReference mref ;
     Bundle bundle ;
+    FloatingActionButton fab ;
 
 
     @Override
@@ -37,6 +39,7 @@ public class ShowWords extends AppCompatActivity {
         bundle = getIntent().getExtras();
         listView = findViewById(R.id.wordListView);
         session = bundle.getString("Session");
+        fab = findViewById(R.id.addInSession);
         mref = FirebaseDatabase.getInstance().getReference().child(session);
         mref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -67,6 +70,15 @@ public class ShowWords extends AppCompatActivity {
                 Log.d("test",editWord.get(0)+" "+editWord.get(1)+" "+editWord.get(2));
                 Intent i = new Intent(ShowWords.this, EditMeaning.class);
                 i.putExtra("Extra", editWord);
+                startActivity(i);
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ShowWords.this, AddWithoutSession.class);
+                i.putExtra("Session",session);
                 startActivity(i);
             }
         });

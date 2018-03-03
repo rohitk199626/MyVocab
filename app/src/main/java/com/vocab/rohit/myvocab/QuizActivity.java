@@ -109,6 +109,8 @@ public class QuizActivity extends AppCompatActivity {
             return;
         }
 
+        checkButton.setClickable(true);
+        checkButton.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         answerEditText.setText("");
         statusTextView.setAlpha(0);
         while(true)
@@ -131,8 +133,10 @@ public class QuizActivity extends AppCompatActivity {
                     statusTextView.setText("That's Correct");
                     statusTextView.setTextColor(Color.GREEN);
                     statusTextView.setAlpha(1);
-                    if(!quizData.get(randomNum).visited)
-                        count++;
+                    if(!quizData.get(randomNum).visited){
+                        count = count + 1 ;
+                        Log.d("manish",answer + " " + count);
+                    }
                     quizData.get(randomNum).visited = true ;
 
                 }
@@ -152,6 +156,8 @@ public class QuizActivity extends AppCompatActivity {
                 statusTextView.setText(answer);
                 statusTextView.setTextColor(Color.GREEN);
                 statusTextView.setAlpha(1);
+                checkButton.setClickable(false);
+                checkButton.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
             }
         });
 
